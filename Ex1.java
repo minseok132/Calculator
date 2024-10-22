@@ -50,7 +50,13 @@ public class Ex1 extends JFrame implements ActionListener {
         } else if (command.equals("C")) {
             display.setText("");
             operator = "";
-        }else if (command.equals("+/-")) {
+        }
+        else if (command.equals("<-")) {
+        	double currentValue = Double.parseDouble(display.getText());
+            currentValue = currentValue/10 - (currentValue%10 *0.1);
+            display.setText(String.valueOf(currentValue));
+        }
+        else if (command.equals("+/-")) {
             double currentValue = Double.parseDouble(display.getText());
             currentValue *= -1; // 부호 변경
             display.setText(String.valueOf(currentValue)); 
